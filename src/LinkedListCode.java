@@ -6,10 +6,11 @@ public class LinkedListCode {
 
         nums.add(5);
         nums.add(9);
-
         nums.add(6);
-//        System.out.println(nums.get(2));
-//        nums.peek();
+
+        nums.addFirst(7);
+
+        nums.delete(9);
 
         nums.printValues();
 
