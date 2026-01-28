@@ -5,7 +5,7 @@ public class BinarySearch {
         int nums[] = {5, 7, 9, 11, 13};
         int target = 11;
 
-        int result = binarySearch(nums, target);
+        int result = binarySearch(nums, target, 0, nums.length-1);
 
         if(result != -1)
             System.out.println("Element found at Index: " + result);
@@ -15,14 +15,24 @@ public class BinarySearch {
 
     }
 
-    public static int binarySearch(int[] nums, int target) {
+    public static int binarySearch(int[] nums, int target, int left, int right) {
 
         // 5, 7, 9, 11, 13
         int steps = 0;
-        int left = 0;
-        int right = nums.length-1;
+        /*int left = 0;
+        int right = nums.length-1;*/
 
-        while(left <= right){
+        if(left <= right) {
+            int mid = (left + right) / 2;
+            if (nums[mid] == target)
+                return mid;
+            else if (nums[mid] < target)
+                return binarySearch(nums, target, mid+1, right);
+            else
+                return binarySearch(nums, target, left, mid-1);
+        }
+
+        /*while(left <= right){
             steps++;
             int mid = (left + right)/2;
             if(nums[mid] ==target){
@@ -34,7 +44,7 @@ public class BinarySearch {
             }
             else
                 right = mid - 1;
-        }
+        }*/
 
         System.out.println("Steps taken by Binary: " + steps);
         return -1;
