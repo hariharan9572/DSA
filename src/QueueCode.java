@@ -10,7 +10,19 @@ public class QueueCode {
         queue.enqueue(99);
 
         System.out.println(queue.dequeue());
-        queue.show();
+
+        queue.enqueue(12);
+        queue.enqueue(32);
+
+        System.out.println("peek " + queue.peek());
+
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+
+        //queue.show();
 
     }
 
